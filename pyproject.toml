@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multi-tenant-postgres-sdk"
+version = "1.0.0"
+description = "Multi-tenant PostgreSQL SDK: dynamic tenant datasource registration and routing for Python."
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "ExpertFlow" }
+]
+keywords = ["multi-tenant", "postgresql", "postgres", "sqlalchemy", "routing"]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "sqlalchemy>=2.0",
+    "psycopg2-binary>=2.9",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pytest-cov>=4",
+]
+
+# Flat layout: package files (__init__.py, *.py) are at repo root
+[tool.setuptools]
+packages = ["multi_tenant_postgres_sdk"]
+package-dir = { "multi_tenant_postgres_sdk" = "." }
